@@ -47,10 +47,11 @@
     }
     .nav-logo {
       font-family: 'Space Grotesk', sans-serif;
-      font-weight: 800; font-size: 1.2rem;
+      font-weight: 800; font-size: 1.05rem;
       color: var(--text);
       text-decoration: none;
       letter-spacing: -0.02em;
+      white-space: nowrap;
     }
     .nav-logo span { color: var(--accent); }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
@@ -144,6 +145,7 @@
       max-width: 560px; margin-bottom: 2.5rem; line-height: 1.7;
       animation: fadeUp 0.6s 0.2s ease both;
     }
+    .hero-desc strong { font-weight: 400; }
     .hero-ctas {
       display: flex; gap: 1rem; flex-wrap: wrap;
       animation: fadeUp 0.6s 0.3s ease both;
@@ -233,6 +235,8 @@
     .exp-company { color: var(--accent); font-size: 0.9rem; font-weight: 500; }
     .exp-date { color: var(--muted); font-size: 0.8rem; }
     .exp-loc { color: var(--muted); font-size: 0.8rem; }
+    .org-logo-stack { display: inline-flex; align-items: center; gap: 0.35rem; }
+    .org-logo { height: 22px; width: auto; object-fit: contain; display: block; }
     .tag {
       display: inline-block; padding: 0.2rem 0.65rem;
       border-radius: 100px; font-size: 0.75rem; font-weight: 500;
@@ -246,7 +250,7 @@
       position: relative;
     }
     .exp-bullets li::marker { color: var(--accent); }
-    .exp-bullets li strong { color: var(--text); }
+    .exp-bullets li strong { color: var(--text); font-weight: 400; }
     .exp-nested { margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
     .exp-nested-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--muted); margin-bottom: 1.2rem; }
     .rotation-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
@@ -258,7 +262,7 @@
     .rotation-name { font-weight: 500; font-size: 0.9rem; margin-bottom: 0.6rem; color: var(--text); }
     .rotation-bullets { padding-left: 1rem; }
     .rotation-bullets li { color: var(--muted); font-size: 0.83rem; line-height: 1.55; margin-bottom: 0.35rem; }
-    .rotation-bullets li strong { color: var(--text); }
+    .rotation-bullets li strong { color: var(--text); font-weight: 400; }
 
     /* --- PROJECTS --- */
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
@@ -281,6 +285,8 @@
     .project-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.75rem; }
     .project-desc { color: var(--muted); font-size: 0.9rem; line-height: 1.65; margin-bottom: 1.2rem; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .project-logo-wrap { display: flex; align-items: center; height: 48px; margin-bottom: 0.6rem; }
+    .project-org-logo { max-height: 40px; width: auto; display: block; }
 
     /* --- SKILLS --- */
     #skills {
@@ -376,6 +382,23 @@
       color: var(--muted);
       font-size: 0.84rem;
     }
+    .cert-link {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      margin-top: 0.85rem;
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid rgba(79,70,229,0.22);
+      background: rgba(79,70,229,0.06);
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      transition: transform 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .cert-link:hover {
+      transform: translateY(-1px);
+      border-color: rgba(79,70,229,0.42);
+      background: rgba(79,70,229,0.10);
+    }
 
     /* --- CONTACT --- */
     #contact { text-align: center; }
@@ -417,6 +440,7 @@
       .hero-content { border-radius: 18px; padding: 1.2rem; }
       #hero { flex-direction: column; gap: 1.5rem; }
       .hero-profile { width: min(340px, 86vw); order: -1; }
+      .nav-logo { font-size: 1rem; }
       .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
       section { padding: 4rem 5vw; }
       .exp-header { flex-direction: column; }
@@ -510,7 +534,13 @@
         <div>
           <div class="exp-title">Product Engineer</div>
           <div class="exp-meta">
-            <span class="exp-company">Carrier</span>
+            <span class="exp-company">
+              <span class="org-logo-stack">
+                <img class="org-logo" src="assets/logos/carrier.png" alt="Carrier logo" loading="lazy"/>
+                <img class="org-logo" src="assets/logos/viessmann.png" alt="Viessmann logo" loading="lazy"/>
+              </span>
+              Viessmann Climate Solutions (Carrier Company)
+            </span>
             <span class="exp-loc">· Hyderabad, India</span>
           </div>
         </div>
@@ -533,7 +563,12 @@
         <div>
           <div class="exp-title">Engineering Leadership Program Associate</div>
           <div class="exp-meta">
-            <span class="exp-company">Carrier</span>
+            <span class="exp-company">
+              <span class="org-logo-stack">
+                <img class="org-logo" src="assets/logos/carrier.png" alt="Carrier logo" loading="lazy"/>
+              </span>
+              Carrier
+            </span>
             <span class="exp-loc">· Hyderabad, India</span>
           </div>
         </div>
@@ -571,21 +606,25 @@
       </div>
     </div>
 
-    <!-- Consulting -->
+    <!-- Chandhar Research Labs - Research Intern -->
     <div class="exp-card">
       <div class="exp-header">
         <div>
-          <div class="exp-title">Student Corporate Consultant</div>
+          <div class="exp-title">Research Intern</div>
           <div class="exp-meta">
-            <span class="exp-company">Corporate & Social Impact Consulting</span>
-            <span class="exp-loc">· West Lafayette, IN</span>
+            <span class="exp-company">Chandhar Research Labs</span>
+            <span class="exp-loc">· Chennai, India</span>
           </div>
         </div>
-        <span class="exp-date">Jan 2026 – Present</span>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.5rem">
+          <span class="exp-date">Mar 2021 – May 2021</span>
+          <span class="tag">IoT Security</span>
+        </div>
       </div>
-      <ul class="exp-bullets" style="margin-top:1rem">
-        <li><strong>ISE (Italy):</strong> Assessing agentic AI adoption to enhance vibration analysis for industrial predictive maintenance; developing strategic roadmap and business case.</li>
-        <li><strong>Kaaro Health @ Bayer:</strong> Developing growth and market expansion strategy for digital health platform serving underserved communities in Uganda.</li>
+      <ul class="exp-bullets">
+        <li>Built an IoT security testbed to detect and analyze DoS/DDoS attack patterns.</li>
+        <li>Performed packet collection, filtering, and attack simulation using Python, Node-RED, and Wireshark.</li>
+        <li>Applied machine learning to analyze timing delays between messages and support real-time intrusion detection.</li>
       </ul>
     </div>
 
@@ -623,6 +662,78 @@
         <span class="tag">SRAM</span>
         <span class="tag">AI Hardware</span>
         <span class="tag green">Published</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-logo-wrap">
+        <img class="project-org-logo" src="assets/logos/ise.png" alt="ISE logo" loading="lazy"/>
+      </div>
+      <div class="project-title">ISE (Italy) — Agentic AI for Predictive Maintenance</div>
+      <p class="project-desc">
+        Assessed agentic AI adoption to enhance vibration analysis for industrial predictive maintenance.
+        <br/><br/>
+        Produced a strategic roadmap and business case.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Strategy</span>
+        <span class="tag green">Predictive Maintenance</span>
+        <span class="tag">AI</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-logo-wrap">
+        <img class="project-org-logo" src="assets/logos/bayer.png" alt="Bayer logo" loading="lazy"/>
+      </div>
+      <div class="project-title">Kaaro Health @ Bayer — Growth & Market Expansion</div>
+      <p class="project-desc">
+        Developed growth and market expansion strategy for a digital health platform supporting underserved communities in Uganda.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Go-to-Market</span>
+        <span class="tag green">Social Impact</span>
+        <span class="tag">Product</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-icon">📦</div>
+      <div class="project-title">Bulk Export Job Optimization (POC)</div>
+      <p class="project-desc">
+        Benchmarked Sidekiq vs Delayed Job to reduce background-job bottlenecks for large exports.
+        <br/><br/>
+        Demonstrated higher throughput and scalability improvements for high-volume job execution.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Performance</span>
+        <span class="tag">Optimization</span>
+        <span class="tag green">POC</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-icon">🛡️</div>
+      <div class="project-title">Machine Learning-based IoT Security Testbed</div>
+      <p class="project-desc">
+        Built an IoT security testbed using Python, Node-RED, and Wireshark to detect and analyze DoS/DDoS patterns.
+        <br/><br/>
+        Applied machine learning to analyze timing delays and packet behavior for intrusion detection and resilience.
+      </p>
+      <div class="project-tags">
+        <span class="tag">IoT</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag green">Security</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-icon">🌿</div>
+      <div class="project-title">Smart Garden (IoT)</div>
+      <p class="project-desc">
+        Developed a low-cost IoT greenhouse system for tomato cultivation with sensors for temperature, humidity, light, and soil moisture.
+        <br/><br/>
+        Enabled automated irrigation and real-time monitoring via smartphone integration.
+      </p>
+      <div class="project-tags">
+        <span class="tag">IoT</span>
+        <span class="tag">Automation</span>
+        <span class="tag green">Prototype</span>
       </div>
     </div>
   </div>
@@ -685,24 +796,57 @@
   <h2>Certifications & Achievements</h2>
   <div class="cert-grid reveal">
     <article class="cert-card">
-      <img class="cert-image" src="assets/certifications/cspo.jpg" alt="Certified Scrum Product Owner certificate" loading="lazy"/>
+      <img class="cert-image" src="assets/certifications/placeholder.png" alt="CSPO certificate" loading="lazy"/>
       <div class="cert-content">
         <div class="cert-title">Certified Scrum Product Owner (CSPO)</div>
-        <div class="cert-meta">Scrum Alliance · Add month/year</div>
+        <div class="cert-meta">Scrum Alliance · Issued Oct 2025 · Expires Oct 2027</div>
       </div>
     </article>
     <article class="cert-card">
-      <img class="cert-image" src="assets/certifications/placeholder-1.jpg" alt="Certification or achievement proof" loading="lazy"/>
+      <img class="cert-image" src="assets/certifications/placeholder.png" alt="McKinsey Forward Program certificate" loading="lazy"/>
       <div class="cert-content">
-        <div class="cert-title">Add your certification title</div>
-        <div class="cert-meta">Issuer · Add month/year</div>
+        <div class="cert-title">McKinsey Forward Program</div>
+        <div class="cert-meta">McKinsey & Company · Issued Dec 2025</div>
       </div>
     </article>
     <article class="cert-card">
-      <img class="cert-image" src="assets/proofs/placeholder-2.jpg" alt="Project proof screenshot" loading="lazy"/>
+      <img class="cert-image" src="assets/certifications/placeholder.png" alt="Artificial Intelligence for Agile Professionals certificate" loading="lazy"/>
       <div class="cert-content">
-        <div class="cert-title">Add a project proof or award</div>
-        <div class="cert-meta">Context · Add quick impact line</div>
+        <div class="cert-title">Artificial Intelligence (AI) for Agile Professionals</div>
+        <div class="cert-meta">World of Agile · Issued Nov 2025</div>
+      </div>
+    </article>
+    <article class="cert-card">
+      <img class="cert-image" src="assets/certifications/placeholder.png" alt="Software Product Management Specialization certificate" loading="lazy"/>
+      <div class="cert-content">
+        <div class="cert-title">Software Product Management Specialization</div>
+        <div class="cert-meta">University of Alberta · Issued Jun 2025</div>
+        <a
+          class="cert-link"
+          href="https://coursera.org/account/accomplishments/specialization/certificate/IBAS9TKD4SDR?trk=public_profile_certification-title"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View certificate</a>
+      </div>
+    </article>
+    <article class="cert-card">
+      <img class="cert-image" src="assets/certifications/placeholder.png" alt="Version Control by Meta certificate" loading="lazy"/>
+      <div class="cert-content">
+        <div class="cert-title">Version Control</div>
+        <div class="cert-meta">Meta · Issued Jan 2024</div>
+        <a
+          class="cert-link"
+          href="https://coursera.org/account/accomplishments/records/672MLZGBH8JF?trk=public_profile_certification-title"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View certificate</a>
+      </div>
+    </article>
+    <article class="cert-card">
+      <img class="cert-image" src="assets/proofs/placeholder.png" alt="Carrier Impactful Award proof" loading="lazy"/>
+      <div class="cert-content">
+        <div class="cert-title">Impactful Award</div>
+        <div class="cert-meta">Carrier · Issued Oct 2025 (also Jun 2025)</div>
       </div>
     </article>
   </div>
