@@ -1,0 +1,9 @@
+{
+  "name": "pkdevadathan-github-io",
+  "private": true,
+  "description": "Portfolio site — run locally with npm run dev",
+  "scripts": {
+    "dev": "python3 dev-server.py",
+    "start": "python3 dev-server.py"
+  }
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Devadathan P K — Product Engineer</title>
+  <title>Devadathan P K · Product Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -146,6 +146,19 @@
       animation: fadeUp 0.6s 0.2s ease both;
     }
     .hero-desc strong { font-weight: 400; }
+    .hero-tagline {
+      display: flex; flex-wrap: wrap; align-items: baseline;
+      gap: 0.25rem 1rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.35rem, 3.5vw, 2rem);
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      max-width: 720px;
+    }
+    .hero-tagline .hero-beat { white-space: nowrap; }
+    .hero-tagline .hero-dot { color: var(--accent); font-weight: 800; }
     .hero-ctas {
       display: flex; gap: 1rem; flex-wrap: wrap;
       animation: fadeUp 0.6s 0.3s ease both;
@@ -259,6 +272,27 @@
       border: 1px solid rgba(15,23,42,0.10);
       border-radius: 12px; padding: 1.2rem 1.4rem;
     }
+    .rotation-brand {
+      display: flex; align-items: center; min-height: 42px;
+      margin-bottom: 0.95rem;
+    }
+    .rotation-brand img {
+      max-height: 38px; max-width: 100%; width: auto;
+      object-fit: contain; object-position: left center;
+      display: block;
+    }
+    .rotation-brand--dark {
+      background: linear-gradient(180deg, #0f2744, #0a1830);
+      margin: -1.2rem -1.4rem 1rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 12px 12px 0 0;
+      min-height: 52px;
+      justify-content: center;
+    }
+    .rotation-brand--dark img {
+      max-height: 30px;
+      object-position: center;
+    }
     .rotation-name { font-weight: 500; font-size: 0.9rem; margin-bottom: 0.6rem; color: var(--text); }
     .rotation-bullets { padding-left: 1rem; }
     .rotation-bullets li { color: var(--muted); font-size: 0.83rem; line-height: 1.55; margin-bottom: 0.35rem; }
@@ -326,6 +360,14 @@
       box-shadow: 0 18px 38px rgba(15, 23, 42, 0.10);
       transform: translateY(-3px);
     }
+    .edu-logo-wrap {
+      display: flex; align-items: center; justify-content: flex-start;
+      min-height: 52px; margin-bottom: 1rem;
+    }
+    .edu-school-logo {
+      max-height: 52px; max-width: min(220px, 100%); width: auto;
+      object-fit: contain; object-position: left center; display: block;
+    }
     .edu-degree { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.4rem; }
     .edu-school { color: var(--accent); font-size: 0.95rem; font-weight: 500; margin-bottom: 0.3rem; }
     .edu-dates { color: var(--muted); font-size: 0.82rem; margin-bottom: 1rem; }
@@ -367,10 +409,11 @@
     .cert-image {
       display: block;
       width: 100%;
-      height: 190px;
-      object-fit: cover;
+      height: 220px;
+      object-fit: contain;
+      object-position: center top;
       border-bottom: 1px solid rgba(15,23,42,0.08);
-      background: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.95);
     }
     .cert-content { padding: 1rem 1rem 1.1rem; }
     .cert-title {
@@ -469,15 +512,15 @@
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <div class="hero-tag">Open to Summer / Fall 2026 Internships</div>
+    <div class="hero-tag">Open to Summer and Fall 2026 Internships</div>
     <h1>
       Devadathan<br/>
       <span class="line2">P<em>.</em>K<em>.</em></span>
     </h1>
-    <p class="hero-desc">
-      Product-focused Engineer. 3+ years building B2B SaaS platforms at Fortune 200,
-      serving <strong style="color:var(--text)">10,000+ users across 15+ countries</strong>.
-      CSPO-certified. M.S. Engineering Management at Purdue.
+    <p class="hero-desc hero-tagline">
+      <span class="hero-beat">Build<span class="hero-dot">.</span></span>
+      <span class="hero-beat">Ship<span class="hero-dot">.</span></span>
+      <span class="hero-beat">Scale<span class="hero-dot">.</span></span>
     </p>
     <div class="hero-ctas">
       <a href="mailto:pkdevadathan@gmail.com" class="btn btn-primary">
@@ -528,7 +571,7 @@
   <h2>Experience</h2>
   <div class="exp-grid reveal">
 
-    <!-- Carrier - Product Engineer -->
+    <!-- Carrier: Product Engineer -->
     <div class="exp-card">
       <div class="exp-header">
         <div>
@@ -545,7 +588,7 @@
           </div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.5rem">
-          <span class="exp-date">Jul 2024 – Dec 2025</span>
+          <span class="exp-date">Jul 2024 to Dec 2025</span>
           <span class="tag">CSPO Certified</span>
         </div>
       </div>
@@ -573,30 +616,39 @@
           </div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.5rem">
-          <span class="exp-date">Aug 2022 – Jul 2024</span>
+          <span class="exp-date">Aug 2022 to Jul 2024</span>
           <span class="tag green">3 Rotations</span>
         </div>
       </div>
-      <p style="color:var(--muted);font-size:0.88rem;margin-top:0.8rem;">Selected for Carrier's competitive ELP — completing three global 8-month rotations to develop engineering and product leadership.</p>
+      <p style="color:var(--muted);font-size:0.88rem;margin-top:0.8rem;">Selected for Carrier's competitive ELP, completing three global 8-month rotations to develop engineering and product leadership.</p>
       <div class="exp-nested">
         <div class="exp-nested-title">Rotations</div>
         <div class="rotation-grid">
           <div class="rotation-card">
-            <div class="rotation-name">🏗️ Building Automation Products</div>
+            <div class="rotation-brand">
+              <img src="assets/logos/automated-logic.png" alt="Automated Logic" loading="lazy"/>
+            </div>
+            <div class="rotation-name">Building Automation Products</div>
             <ul class="rotation-bullets">
               <li>Improved app load time by <strong>41%</strong> via React migration for Equipment Touch B2B app.</li>
               <li>Achieved <strong>100% critical vulnerability resolution</strong> post-penetration testing for regulated industry customers.</li>
             </ul>
           </div>
           <div class="rotation-card">
-            <div class="rotation-name">🔒 Security Systems</div>
+            <div class="rotation-brand">
+              <img src="assets/logos/ultrasync.png" alt="Ultrasync Empowered" loading="lazy"/>
+            </div>
+            <div class="rotation-name">Security Systems</div>
             <ul class="rotation-bullets">
               <li>Led redesign of <strong>Ultrasync V2</strong> security management portal for large-scale deployments.</li>
               <li>Cut background job runtime by <strong>33%</strong> through Sidekiq optimization analysis.</li>
             </ul>
           </div>
           <div class="rotation-card">
-            <div class="rotation-name">📊 Carrier Product Analytics</div>
+            <div class="rotation-brand rotation-brand--dark">
+              <img src="assets/logos/carrier-abound.png" alt="Carrier Abound" loading="lazy"/>
+            </div>
+            <div class="rotation-name">Carrier Product Analytics</div>
             <ul class="rotation-bullets">
               <li>Generated <strong>$240K annual revenue</strong> via condenser fouling detection algorithm for 500+ HVAC units.</li>
               <li>Eliminated <strong>224 hrs/month</strong> of manual work by automating maintenance reporting pipeline.</li>
@@ -606,7 +658,7 @@
       </div>
     </div>
 
-    <!-- Chandhar Research Labs - Research Intern -->
+    <!-- Chandhar Research Labs: Research Intern -->
     <div class="exp-card">
       <div class="exp-header">
         <div>
@@ -617,9 +669,12 @@
           </div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.5rem">
-          <span class="exp-date">Mar 2021 – May 2021</span>
+          <span class="exp-date">Mar 2021 to May 2021</span>
           <span class="tag">IoT Security</span>
         </div>
+      </div>
+      <div class="project-logo-wrap">
+        <img class="project-org-logo" src="assets/logos/chandhar-labs.png" alt="Chandhar Research Labs" loading="lazy"/>
       </div>
       <ul class="exp-bullets">
         <li>Built an IoT security testbed to detect and analyze DoS/DDoS attack patterns.</li>
@@ -640,7 +695,7 @@
       <div class="project-icon">🍽️</div>
       <div class="project-title">ReadyPing</div>
       <p class="project-desc">
-        Minimizing queue congestion in small eateries through smart collection alerts. Delivered a WhatsApp-native solution with zero hardware changes — separating kitchen readiness from customer presence to improve flow without disrupting existing POS systems.
+        Minimizing queue congestion in small eateries through smart collection alerts. Delivered a WhatsApp-native solution with zero hardware changes, separating kitchen readiness from customer presence to improve flow without disrupting existing POS systems.
         <br/><br/>
         <em style="color:var(--accent2);font-size:0.82rem;">Published in International Journal of Computer Applications</em>
       </p>
@@ -668,7 +723,7 @@
       <div class="project-logo-wrap">
         <img class="project-org-logo" src="assets/logos/ise.png" alt="ISE logo" loading="lazy"/>
       </div>
-      <div class="project-title">ISE (Italy) — Agentic AI for Predictive Maintenance</div>
+      <div class="project-title">ISE (Italy): Agentic AI for Predictive Maintenance</div>
       <p class="project-desc">
         Assessed agentic AI adoption to enhance vibration analysis for industrial predictive maintenance.
         <br/><br/>
@@ -684,7 +739,7 @@
       <div class="project-logo-wrap">
         <img class="project-org-logo" src="assets/logos/bayer.png" alt="Bayer logo" loading="lazy"/>
       </div>
-      <div class="project-title">Kaaro Health @ Bayer — Growth & Market Expansion</div>
+      <div class="project-title">Kaaro Health @ Bayer: Growth & Market Expansion</div>
       <p class="project-desc">
         Developed growth and market expansion strategy for a digital health platform supporting underserved communities in Uganda.
       </p>
@@ -796,54 +851,54 @@
   <h2>Certifications & Achievements</h2>
   <div class="cert-grid reveal">
     <article class="cert-card">
-      <img class="cert-image" src="assets/certifications/placeholder.png" alt="CSPO certificate" loading="lazy"/>
+      <img class="cert-image" src="assets/certifications/cspo.png" alt="CSPO certificate" loading="lazy"/>
       <div class="cert-content">
         <div class="cert-title">Certified Scrum Product Owner (CSPO)</div>
         <div class="cert-meta">Scrum Alliance · Issued Oct 2025 · Expires Oct 2027</div>
       </div>
     </article>
     <article class="cert-card">
-      <img class="cert-image" src="assets/certifications/placeholder.png" alt="McKinsey Forward Program certificate" loading="lazy"/>
+      <img class="cert-image" src="assets/certifications/mckinsey-forward.png" alt="McKinsey Forward Program certificate" loading="lazy"/>
       <div class="cert-content">
         <div class="cert-title">McKinsey Forward Program</div>
-        <div class="cert-meta">McKinsey & Company · Issued Dec 2025</div>
+        <div class="cert-meta">McKinsey.org · Issued Dec 2025</div>
       </div>
     </article>
     <article class="cert-card">
-      <img class="cert-image" src="assets/certifications/placeholder.png" alt="Artificial Intelligence for Agile Professionals certificate" loading="lazy"/>
+      <img class="cert-image" src="assets/certifications/ai-agile-professionals.png" alt="Artificial Intelligence for Agile Professionals certificate" loading="lazy"/>
       <div class="cert-content">
         <div class="cert-title">Artificial Intelligence (AI) for Agile Professionals</div>
         <div class="cert-meta">World of Agile · Issued Nov 2025</div>
       </div>
     </article>
     <article class="cert-card">
-      <img class="cert-image" src="assets/certifications/placeholder.png" alt="Software Product Management Specialization certificate" loading="lazy"/>
+      <img class="cert-image" src="assets/certifications/software-product-management.png" alt="Software Product Management Specialization certificate" loading="lazy"/>
       <div class="cert-content">
         <div class="cert-title">Software Product Management Specialization</div>
-        <div class="cert-meta">University of Alberta · Issued Jun 2025</div>
+        <div class="cert-meta">University of Alberta (Coursera) · Issued Jun 2025</div>
         <a
           class="cert-link"
-          href="https://coursera.org/account/accomplishments/specialization/certificate/IBAS9TKD4SDR?trk=public_profile_certification-title"
+          href="https://coursera.org/verify/specialization/IBAS9TKD4SDR"
           target="_blank"
           rel="noopener noreferrer"
         >View certificate</a>
       </div>
     </article>
     <article class="cert-card">
-      <img class="cert-image" src="assets/certifications/placeholder.png" alt="Version Control by Meta certificate" loading="lazy"/>
+      <img class="cert-image" src="assets/certifications/meta-version-control.png" alt="Version Control by Meta certificate" loading="lazy"/>
       <div class="cert-content">
         <div class="cert-title">Version Control</div>
-        <div class="cert-meta">Meta · Issued Jan 2024</div>
+        <div class="cert-meta">Meta (Coursera) · Issued Jan 2024</div>
         <a
           class="cert-link"
-          href="https://coursera.org/account/accomplishments/records/672MLZGBH8JF?trk=public_profile_certification-title"
+          href="https://coursera.org/verify/672MLZGBH8JF"
           target="_blank"
           rel="noopener noreferrer"
         >View certificate</a>
       </div>
     </article>
     <article class="cert-card">
-      <img class="cert-image" src="assets/proofs/placeholder.png" alt="Carrier Impactful Award proof" loading="lazy"/>
+      <img class="cert-image" src="assets/proofs/impactful-award.png" alt="Carrier Impactful Award certificate" loading="lazy"/>
       <div class="cert-content">
         <div class="cert-title">Impactful Award</div>
         <div class="cert-meta">Carrier · Issued Oct 2025 (also Jun 2025)</div>
@@ -858,19 +913,22 @@
   <h2>Education</h2>
   <div class="edu-grid reveal">
     <div class="edu-card">
+      <div class="edu-logo-wrap">
+        <img class="edu-school-logo" src="assets/logos/purdue.png" alt="Purdue University logo" loading="lazy"/>
+      </div>
       <div class="edu-degree">M.S. Engineering Management</div>
       <div class="edu-school">Purdue University</div>
-      <div class="edu-dates">Jan 2026 – May 2027 · West Lafayette, IN</div>
+      <div class="edu-dates">Jan 2026 to May 2027 · West Lafayette, IN</div>
       <span class="edu-gpa">⭐ GPA: 4.0 / 4.0</span>
     </div>
     <div class="edu-card">
-      <div class="edu-degree">B.Tech, ECE + Minor in Management</div>
-      <div class="edu-school">NIT Trichy</div>
-      <div class="edu-dates">Jul 2018 – May 2022 · Trichy, India</div>
-      <span class="edu-gpa">GPA: 3.51 / 4.0</span>
-      <div class="edu-highlights">
-        <p style="margin-top:1rem">ASEM Member · Intern at Chandhar Labs · Analyst at Sigma (The Business Club) · PR Specialist at Pragyan Fest NITT</p>
+      <div class="edu-logo-wrap">
+        <img class="edu-school-logo" src="assets/logos/nit-trichy.png" alt="NIT Tiruchirappalli logo" loading="lazy"/>
       </div>
+      <div class="edu-degree">B.Tech, Electronics and Communication Engineering + Minor in Management</div>
+      <div class="edu-school">NIT Trichy</div>
+      <div class="edu-dates">Jul 2018 to May 2022 · Trichy, India</div>
+      <span class="edu-gpa">GPA: 3.51 / 4.0</span>
     </div>
   </div>
 </section>
@@ -881,7 +939,7 @@
     <div class="section-label">Say Hello</div>
     <h2>Let's connect.</h2>
     <p class="contact-desc">
-      I'm actively seeking Summer / Fall 2026 Product Management or Product Engineering internships.
+      I'm actively seeking Summer and Fall 2026 Product Management or Product Engineering internships.
       Open to relocation. Always happy to chat about product, tech, or ideas.
     </p>
     <div class="contact-links">
@@ -891,7 +949,7 @@
       </a>
       <a href="tel:+17654766200" class="contact-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.11 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.19 6.19l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        +1 765-476-6200
+        +1 765 476 6200
       </a>
       <a href="https://github.com/pkdevadathan" target="_blank" class="contact-link">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
