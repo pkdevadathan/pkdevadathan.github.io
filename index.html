@@ -1019,6 +1019,14 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
   }, { threshold: 0.1 });
   reveals.forEach(r => observer.observe(r));
+  function revealInView() {
+    reveals.forEach(r => {
+      const rect = r.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) r.classList.add('visible');
+    });
+  }
+  window.addEventListener('load', revealInView);
+  window.addEventListener('hashchange', () => setTimeout(revealInView, 50));
 
   // Active nav link highlight
   const sections = document.querySelectorAll('section[id]');
